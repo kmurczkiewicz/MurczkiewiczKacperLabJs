@@ -2,27 +2,27 @@
 <html lang="pl">
 
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Programowanie w JAVASCRIPT - template">
-<meta name="author" content="dr inż. Jacek Paluszak">
-<link rel="icon" href="img/favicon.ico">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Programowanie w JAVASCRIPT - template">
+	<meta name="author" content="dr inż. Jacek Paluszak">
+	<link rel="icon" href="img/favicon.ico">
 
-<title>Programowanie w JAVASCRIPT</title>
+	<title>Programowanie w JAVASCRIPT</title>
 
-<!-- Bootstrap core CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
-<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-<link href="css/navbar-fixed-top.css" rel="stylesheet">
-<script src="js/ie-emulation-modes-warning.js"></script>
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+	<link href="css/navbar-fixed-top.css" rel="stylesheet">
+	<script src="js/ie-emulation-modes-warning.js"></script>
 
-<!-- jQuery  -->
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
-<script src="js/jquery.easing.1.3.min.js"></script>
-<script src="js/jquery.easing.compatibility.js"></script>
+	<!-- jQuery  -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
+	<script src="js/jquery.easing.1.3.min.js"></script>
+	<script src="js/jquery.easing.compatibility.js"></script>
 
 
 </head>
@@ -34,32 +34,27 @@
 		<div class="container">
 
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+					aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><img src="img/logoPWSZ.png"
-					height="40" alt=""></a> <a class="navbar-brand logotext" href="#">PWSZ
+				<a class="navbar-brand" href="#"><img src="img/logoPWSZ.png" height="40" alt=""></a> <a
+					class="navbar-brand logotext" href="#">PWSZ
 					Lab</a>
 			</div>
 
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#main-page"
-						class="btn btn-primary" title="Strona główna"> <span
-							class="glyphicon glyphicon-home"></span>
-					</a></li>
+					<li class="active"><a href="#main-page" class="btn btn-primary" title="Strona główna"> <span
+								class="glyphicon glyphicon-home"></span>
+						</a></li>
 					<li><a href="#projekt1">Projekt 1</a></li>
 					<li><a href="#projekt2">Projekt 2</a></li>
-					<li><a href="#form" data-toggle="modal"
-						data-target="#ModalForm">Kontakt</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">Opcje <span class="caret"></span>
-					</a>
+					<li><a href="#form" data-toggle="modal" data-target="#ModalForm">Kontakt</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+							aria-haspopup="true" aria-expanded="false">Opcje <span class="caret"></span>
+						</a>
 						<ul class="dropdown-menu">
 							<li><a href="#">Akcja 1</a></li>
 							<li><a href="#">Akcja 2</a></li>
@@ -68,7 +63,8 @@
 							<li class="dropdown-header">Linki</li>
 							<li><a href="#">Link 1</a></li>
 							<li><a href="#">Link 2</a></li>
-						</ul></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -87,7 +83,7 @@
 						<p>nazwisko:</p>
 					</div>
 					<div class="col-md-4">
-						<p>Murczkiewicz</p>
+						<p id="NAZWISKO">Murczkiewicz</p>
 					</div>
 				</div>
 				<div class="row">
@@ -95,7 +91,7 @@
 						<p>imię:</p>
 					</div>
 					<div class="col-md-4">
-						<p>Kacper</p>
+						<p id="IMIE">Kacper</p>
 					</div>
 				</div>
 				<div class="row">
@@ -103,7 +99,7 @@
 						<p>grupa:</p>
 					</div>
 					<div class="col-md-4">
-						<p>2</p>
+						<p id="GRUPA">2</p>
 					</div>
 				</div>
 				<div class="row">
@@ -111,7 +107,7 @@
 						<p>email:</p>
 					</div>
 					<div class="col-md-4">
-						<p>18896@student.pwsz.elblag.pl</p>
+						<p id="EMAIL">18896@student.pwsz.elblag.pl</p>
 					</div>
 				</div>
 				<div class="row">
@@ -119,7 +115,7 @@
 						<p>nr indeksu:</p>
 					</div>
 					<div class="col-md-4">
-						<p>18896</p>
+						<p id="INDEKS">18896</p>
 					</div>
 				</div>
 
@@ -145,43 +141,108 @@
 				</script>
 
 				<script>
-					/*Zadanie 1
-					let tablica = ['JEDEN','DWA','TRZY'];
-					alert('Element 0 tablicy :' +  tablica[0]);
+					//Zadanie 1
+					document.write('<h3><b>ZADANIE 1</h3></b>');
+					let tablica = ['JEDEN', 'DWA', 'TRZY', "CZTERY", "PIĘĆ", "SZEŚĆ"];
+					document.write('<p>Element 0 tablicy : ' + tablica[0] + '</p>');
 
-					tablica[tablica.length-1] = 'Nowa wartość';
-					alert('Element ostani tablicy :' +  tablica[tablica.length-1]);
+					tablica[tablica.length - 1] = 'Nowa wartość';
+					document.write('<p>Element ostani tablicy : ' + tablica[tablica.length - 1] + '</p>');
 
 					tablica[3] = 'NOWY_ELEMENT';
 					tablica[tablica.length] = 'NOWY_ELEMENT_2';
 					tablica.push('nowy8', 'nowy9', 'nowy10', 'nowy11')
 					tablica.unshift('nowy12', 'nowy13')
-					alert('Element 0 tablicy :' +  tablica[0]);
-					*/
+					document.write('<p>Element 0 tablicy : ' + tablica[0] + '</p><br>');
 
 					//Zadanie 2
-					/*
-					let myTab = ['one','two','three'];
+					document.write('<h3><b>ZADANIE 2</h3></b>');
+					let myTab = ['one', 'two', 'three'];
 					document.write('<p>Pierwszy element to <strong>');
 					document.write(myTab[0] + '</strong></p>');
 
 					document.write('<p>Ostatni element to <strong>');
-					document.write(myTab[myTab.length-1] + '</strong></p>');
+					document.write(myTab[myTab.length - 1] + '</strong></p>');
 					myTab.unshift('added');
 
 					document.write('<p>Pierwszy element to <strong>');
-					document.write(myTab[0] + '</strong></p>');
-					 */
+					document.write(myTab[0] + '</strong></p><br>');
 
 					//Zadanie 3
-					for(let i=0; i<10;i++){
-						document.write('<p id="par">TEST'+ i +'</p>');
-					}
-					document.getElementById("par").innerHTML= "Murczkiewicz";
+					document.write('<h3><b>ZADANIE 3</h3></b>');
+				</script>
+
+				<p id="mypar"> Przykladowy paragraf 1 ('p')</p>
+				<p id="mypar"> Przykladowy paragraf 2 ('p')</p>
+				<p id="mypar"> Przykladowy paragraf 3 ('p')</p>
+				<h3 id="hed3"> Przykladowy tekst 1('h3')</h3>
+				<h3 id="hed3"> Przykladowy tekst 2('h3')</h3>
+				<form id="fr">
+					<p>Przykladowy tekst w formularzu('form')</p>
+				</form>
+				<script>
+
+					let sectionParas = document.querySelectorAll('[id=mypar]');
+					let numSP = sectionParas.length;
+					document.write("<p>Ilosc 'p' w tej sekcji (przez ID) : " + numSP + "</p>");
+
+					let sectionHed = document.querySelectorAll('[id=hed3]');
+					let numH = sectionHed.length;
+					document.write("<p>Ilosc 'h3' w tej sekcji (przez ID) : " + numH + "</p>");
+
+					let sectionForm = document.querySelectorAll('[id=fr]');
+					let numFs = sectionForm.length;
+					document.write("<p>Ilosc 'form' w tej sekcji (przez ID) : " + numFs + "</p>");
+
+					let allParas = document.getElementsByTagName('p');
+					let numP = allParas.length;
+					document.write("<p>Ilosc 'p' na calej stronie:" + numP + "</p>");
+
+					let allDivs = document.getElementsByTagName('div');
+					let numDiv = allDivs.length;
+					document.write("<p>Ilosc 'div' na calej stronie:" + numDiv + "</p>");
+
+					let allForms = document.getElementsByTagName('form');
+					let numForms = allForms.length;
+					document.write("<p>Ilosc 'form' na calej stronie:" + numForms + "</p><br>");
 				</script>
 
 
+				<script>
+					//Zadanie 4
+					document.write('<h3><b>ZADANIE 4</h3></b>');
+					document.querySelectorAll('[id=NAZWISKO]')[0].innerHTML = "Murczkiewicz";
+					document.querySelectorAll('[id=IMIE]')[0].innerHTML = "Kacper";
+					document.querySelectorAll('[id=GRUPA]')[0].innerHTML = "2";
+					document.querySelectorAll('[id=EMAIL]')[0].innerHTML = "18896@student.pwsz.elblag.pl";
+					document.querySelectorAll('[id=INDEKS]')[0].innerHTML = "18896";
 
+					document.write("<p id='nowyAkapit'>Zawartosc poczatkowa akapitu nr1!</p>");
+					document.write("<p id='nowyAkapit'>Zawartosc poczatkowa akapitu	nr2!</p>");
+
+					document.querySelectorAll('[id=nowyAkapit]')[0].innerHTML = tablica[0];
+					document.querySelectorAll('[id=nowyAkapit]')[1].innerHTML = tablica[1];
+
+					let i = 0;
+					let x = myTab.length / 2;
+					while (i < x) {
+						document.write("<p>(while) Element tablicy nr" + i + " : " + myTab[i] + "</p>");
+						i++;
+					}
+					for (i = 0; i < x; i++) {
+						document.write("<p>(for) Element tablicy nr" + i + " : " + myTab[i] + "</p>");
+					}
+					function showUserData() {
+						alert("Nazwisko : " + document.querySelectorAll('[id=NAZWISKO]')[0].textContent +
+							"\nImie : " + document.querySelectorAll('[id=IMIE]')[0].textContent +
+							"\nGrupa : " + document.querySelectorAll('[id=GRUPA]')[0].textContent +
+							"\nEmail : " + document.querySelectorAll('[id=EMAIL]')[0].textContent +
+							"\nIndeks : " + document.querySelectorAll('[id=INDEKS]')[0].textContent
+						);
+					}
+					document.write("<button onclick='showUserData()'>Pokaz dane użytkownika</button>");
+
+				</script>
 			</div>
 		</div>
 	</section>
@@ -191,55 +252,107 @@
 		<div class="container">
 			<div class="jumbotron">
 				<h1>Projekt 2</h1>
-				
+
 				<p>Miejsce na projekt laboratoryjny</p>
-				
+				<script>
+					//Zadanie 5
+					document.write('<h2 style="text-align:center"><b>ZADANIE 5 - QUIZ</h2></b><br>');
+
+					//Pytania
+					const questions = [
+						['Ile księżyców ma Ziemia?', 1],
+						['Ile księżyców ma Saturn?', 62],
+						['Ile księżyców ma Wenus?', 0],
+						['Jak nazywa się proces niszczenia skały w wyniku działalności wody lub wiatru?', "erozja"],
+						['Który z popularnych tańców towarzyskich nieodłącznie kojarzy się z Brazylią?', "samba"],
+						['Jak nazywa się zaopatrywanie w żywność pasażerów samolotów czy pracowników firm?', "catering"]
+					];
+
+					//Pokaz pytania
+					for (let i = 0; i < questions.length; i++) {
+						document.write("<p style='font-size: 24px;'><b> Pytanie nr." + (i + 1) + " : </b>" + questions[i][0] + "</p>");
+						document.write("<label for='odp" + i + "' style='font-size: 24px; '>Odpowiedź : </label> <input type='text' id='odp" + i + "'><br><br><br>");
+
+					}
+
+					//Funkcje quizu
+					function checkAnswers() {
+
+						let score = 0;
+						for (let i = 0; i < questions.length; i++) {
+							let userAnswer = document.querySelectorAll('[id=odp' + i + ']')[0];
+							let correctAnswer = questions[i][1];
+
+							if (userAnswer.value.toString() == correctAnswer.toString()) {
+								score++;
+								userAnswer.style.backgroundColor = "#90ee90";
+							}
+							else {
+								userAnswer.style.backgroundColor = "#ff4c4c";
+							}
+
+						}
+						document.getElementById("wynik").innerHTML = "Wynik quizu : " + score + "/" + questions.length + " pkt";
+					}
+
+					function resetQuiz() {
+						document.getElementById("wynik").innerHTML = "";
+						for (let i = 0; i < questions.length; i++) {
+							let userAnswer = document.querySelectorAll('[id=odp' + i + ']')[0];
+							userAnswer.style.backgroundColor = "white";
+							userAnswer.value = "";
+						}
+					}
+
+					//Przyciski zatwierdz/reset
+					document.write("<button onclick='checkAnswers()' style = 'width:256px; font-size: 24px; background:#50C878;'>Zatwierdź</button>");
+					document.write("<button onclick='resetQuiz()' style = 'width: 256px; font-size: 32px; background:#FFD300; float: right;'>Reset Quiz</button>");
+
+
+
+				</script>
+				<br><br><br>
+				<p id="wynik" style='font-size: 24px; font-weight: bold;'></p>
 			</div>
 		</div>
 	</section>
 
 	<footer>
 		<div class="container" style="margin-top: 5%">
-			<button type="button" class="btn btn-link" data-toggle="modal"
-				data-target="#myModal">Polityka prywatności</button>
+			<button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">Polityka
+				prywatności</button>
 		</div>
 	</footer>
 
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel1">
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="close">
+					<button type="button" class="close" data-dismiss="modal" aria-label="close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<h4 class="modal-title" id="myModalLabel1">Polityka prywatności</h4>
 				</div>
 				<div class="modal-body">polityka prywatności...</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default btn-warning btn-sm"
-						data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-default btn-warning btn-sm" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="modal fade" id="ModalForm" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel2">
+	<div class="modal fade" id="ModalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="close">
+					<button type="button" class="close" data-dismiss="modal" aria-label="close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<h4 class="modal-title" id="myModalLabel2">Kontakt</h4>
 				</div>
 				<div class="modal-body">
 					<section id="form" style="margin-top: 5%">
-						<form action="index.html#kontakt" method="post"
-							onsubmit="return checkForm();">
+						<form action="index.html#kontakt" method="post" onsubmit="return checkForm();">
 							<fieldset>
 								<div class="row">
 									<div class="col-md-12">
@@ -271,9 +384,8 @@
 									</div>
 									<div class="col-md-4">
 										<input type="text" class="form-control " id="contactLastName"
-											aria-describedby="inputSuccess5Status"
-											onblur="checkLastName()" /> <span class="hide"
-											aria-hidden="true" id="true2"></span> <span
+											aria-describedby="inputSuccess5Status" onblur="checkLastName()" /> <span
+											class="hide" aria-hidden="true" id="true2"></span> <span
 											id="inputSuccess5Status2" class="sr-only">(success)</span>
 									</div>
 								</div>
@@ -318,8 +430,7 @@
 					</section>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default btn-warning btn-sm"
-						data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-default btn-warning btn-sm" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
@@ -331,7 +442,7 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/ie10-viewport-bug-workaround.js"></script>
 	<script src="js/forms.js"></script>
-	
+
 </body>
 
 </html>
