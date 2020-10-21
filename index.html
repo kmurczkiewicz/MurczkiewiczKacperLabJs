@@ -256,6 +256,8 @@
 				<p>Miejsce na projekt laboratoryjny</p>
 				<script>
 					//Zadanie 5
+					let questionNumber = 0;
+					let score = 0;
 					document.write('<h2 style="text-align:center"><b>ZADANIE 5 - QUIZ</h2></b><br>');
 
 					//Pytania
@@ -268,12 +270,12 @@
 						['Jak nazywa się zaopatrywanie w żywność pasażerów samolotów czy pracowników firm?', "catering"]
 					];
 
-					//Pokaz pytania
-					for (let i = 0; i < questions.length; i++) {
-						document.write("<p style='font-size: 24px;'><b> Pytanie nr." + (i + 1) + " : </b>" + questions[i][0] + "</p>");
-						document.write("<label for='odp" + i + "' style='font-size: 24px; '>Odpowiedź : </label> <input type='text' id='odp" + i + "'><br><br><br>");
+					//Pokaz pytanie
+					//for (let i = 0; i < questions.length; i++) {
+					document.write("<p id='question' style='font-size: 24px;'><b> Pytanie nr." + (questionNumber + 1) + " : </b>" + questions[questionNumber][0] + "</p>");
+					document.write("<label for='odp' style='font-size: 24px; '>Odpowiedź : </label> <input onfocus=\"this.value=''\" type='text' id='odp'><br><br><br>");
 
-					}
+					//}
 
 					//Funkcje quizu
 					function checkAnswers() {
@@ -286,27 +288,69 @@
 							if (userAnswer.value.toString() == correctAnswer.toString()) {
 								score++;
 								userAnswer.style.backgroundColor = "#90ee90";
-							}
-							else {
+							} else {
 								userAnswer.style.backgroundColor = "#ff4c4c";
 							}
 
 						}
-						document.getElementById("wynik").innerHTML = "Wynik quizu : " + score + "/" + questions.length + " pkt";
+					}
+
+					function nextQuestion(){
+
+						if((document.querySelectorAll('[id=zatw]')[0].innerHTML === "Reset?") && (questionNumber===-1)){
+							//Reset quiz
+							score = 0;
+							questionNumber = 0;
+
+							document.querySelectorAll('[id=question]')[0].innerHTML = "<b> Pytanie nr." + (questionNumber + 1) + " : </b>"+questions[questionNumber][0];
+							document.querySelectorAll('[id=zatw]')[0].style.backgroundColor = "grey";
+							document.querySelectorAll('[id=zatw]')[0].innerHTML = "Next"
+							document.getElementById("wynik").innerHTML = "";
+
+						}
+						else{
+						if(questionNumber===5){
+							document.querySelectorAll('[id=zatw]')[0].innerHTML = "Pokaz wynik"
+							document.querySelectorAll('[id=zatw]')[0].style.backgroundColor = "#90ee90";
+						}
+
+						if(questionNumber < 6){
+							let userAns = document.querySelectorAll('[id=odp]')[0];
+							let correctAnswer = questions[questionNumber][1];
+
+							if (userAns.value.toString() == correctAnswer.toString()) {
+								score++;
+							}
+							questionNumber++;
+
+							document.querySelectorAll('[id=odp]')[0].innerHTML = "";
+							document.querySelectorAll('[id=question]')[0].innerHTML = "<b> Pytanie nr." + (questionNumber + 1) + " : </b>"+questions[questionNumber][0];
+
+						}
+						else{
+							document.getElementById("wynik").innerHTML = "Wynik quizu : " + score + "/" + questions.length + " pkt";
+							document.querySelectorAll('[id=zatw]')[0].innerHTML = "Reset?"
+							document.querySelectorAll('[id=zatw]')[0].style.backgroundColor = "#FFD300";
+							questionNumber = -1;
+						}
+
+						}
+
+
 					}
 
 					function resetQuiz() {
 						document.getElementById("wynik").innerHTML = "";
 						for (let i = 0; i < questions.length; i++) {
-							let userAnswer = document.querySelectorAll('[id=odp' + i + ']')[0];
-							userAnswer.style.backgroundColor = "white";
-							userAnswer.value = "";
+							document.querySelectorAll('[id=zatw]')[0].innerHTML = "Next"
+							document.querySelectorAll('[id=zatw]')[0].style.backgroundColor = "gray";
 						}
 					}
 
 					//Przyciski zatwierdz/reset
-					document.write("<button onclick='checkAnswers()' style = 'width:256px; font-size: 24px; background:#50C878;'>Zatwierdź</button>");
-					document.write("<button onclick='resetQuiz()' style = 'width: 256px; font-size: 32px; background:#FFD300; float: right;'>Reset Quiz</button>");
+					document.write("<button id='zatw' onclick='nextQuestion()' style = 'width:256px; font-size: 32px; background:lightslategray; float: right;'>Next</button>")
+					//document.write("<button onclick='checkAnswers()' style = 'width:256px; font-size: 32px; background:#50C878;'>Zatwierdź</button>");
+					//ocument.write("<button onclick='resetQuiz()' style = 'width: 256px; font-size: 32px; background:#FFD300; float: left;'>Reset Quiz</button>");
 
 
 
