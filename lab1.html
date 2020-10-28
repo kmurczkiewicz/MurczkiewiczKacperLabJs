@@ -59,7 +59,7 @@
 							<li><a href="index.html">Main page</a></li>
 							<li><a href="lab1.html">Lab 1</a></li>
 							<li><a href="lab2.html">Lab 2</a></li>
-							<li><a href="#">Lab 3</a></li>
+							<li><a href="#">Akcja 3</a></li>
 							<li role="separator" class="divider"></li>
 							<li class="dropdown-header">Linki</li>
 							<li><a href="#">Link 1</a></li>
@@ -126,23 +126,71 @@
 	</section>
 	<!-- /container -->
 
-	<section id="projekt1">
-		<div class="container">
-			<div class="jumbotron">
-				<h1>Projekt 1</h1>
-				<h3>Opcje --> Lab1</h3>
-			</div>
-		</div>
-	</section>
-
 	<section id="projekt2">
 		<div class="container">
 			<div class="jumbotron">
-				<h1>Projekt 2</h1>
-				<h3>Opcje --> Lab2</h3>
+				<h1>Projekt 1</h1>
+
+				<p>Miejsce na projekt laboratoryjny</p>
+				<script>
+					//Zadanie 5
+					document.write('<h2 style="text-align:center"><b>ZADANIE 5 - QUIZ</h2></b><br>');
+
+					//Pytania
+					const questions = [
+						['Ile księżyców ma Ziemia?', 1],
+						['Ile księżyców ma Saturn?', 62],
+						['Ile księżyców ma Wenus?', 0],
+						['Jak nazywa się proces niszczenia skały w wyniku działalności wody lub wiatru?', "erozja"],
+						['Który z popularnych tańców towarzyskich nieodłącznie kojarzy się z Brazylią?', "samba"],
+						['Jak nazywa się zaopatrywanie w żywność pasażerów samolotów czy pracowników firm?', "catering"]
+					];
+
+					//Pokaz pytania
+					for (let i = 0; i < questions.length; i++) {
+						document.write("<p style='font-size: 24px;'><b> Pytanie nr." + (i + 1) + " : </b>" + questions[i][0] + "</p>");
+						document.write("<label for='odp" + i + "' style='font-size: 24px; '>Odpowiedź : </label> <input type='text' id='odp" + i + "'><br><br><br>");
+
+					}
+
+					//Funkcje quizu
+					function checkAnswers() {
+
+						let score = 0;
+						for (let i = 0; i < questions.length; i++) {
+							let userAnswer = document.querySelectorAll('[id=odp' + i + ']')[0];
+							let correctAnswer = questions[i][1];
+
+							if (userAnswer.value.toString() == correctAnswer.toString()) {
+								score++;
+								userAnswer.style.backgroundColor = "#90ee90";
+							}
+							else {
+								userAnswer.style.backgroundColor = "#ff4c4c";
+							}
+
+						}
+						document.getElementById("wynik").innerHTML = "Wynik quizu : " + score + "/" + questions.length + " pkt";
+					}
+
+					function resetQuiz() {
+						document.getElementById("wynik").innerHTML = "";
+						for (let i = 0; i < questions.length; i++) {
+							let userAnswer = document.querySelectorAll('[id=odp' + i + ']')[0];
+							userAnswer.style.backgroundColor = "white";
+							userAnswer.value = "";
+						}
+					}
+
+					//Przyciski zatwierdz/reset
+					document.write("<button onclick='checkAnswers()' style = 'width:256px; font-size: 24px; background:#50C878;'>Zatwierdź</button>");
+					document.write("<button onclick='resetQuiz()' style = 'width: 256px; font-size: 32px; background:#FFD300; float: right;'>Reset Quiz</button>");
 
 
 
+				</script>
+				<br><br><br>
+				<p id="wynik" style='font-size: 24px; font-weight: bold;'></p>
 			</div>
 		</div>
 	</section>
