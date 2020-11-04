@@ -49,9 +49,8 @@
 					<li class="active"><a href="#main-page" class="btn btn-primary" title="Strona główna"> <span
 								class="glyphicon glyphicon-home"></span>
 						</a></li>
-					<li><a href="#projekt1">Projekt 1</a></li>
-					<li><a href="#projekt2">Projekt 2</a></li>
 					<li><a href="#projekt3">Projekt 3</a></li>
+					<li><a href="#projekt4">Projekt 4</a></li>
 					<li><a href="#form" data-toggle="modal" data-target="#ModalForm">Kontakt</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
 							aria-haspopup="true" aria-expanded="false">Opcje <span class="caret"></span>
@@ -127,30 +126,229 @@
 	</section>
 	<!-- /container -->
 
-	<section id="projekt1">
-		<div class="container">
-			<div class="jumbotron">
-				<h1>Projekt 1</h1>
-				<h3>Opcje --> Lab1</h3>
-			</div>
-		</div>
-	</section>
-
-	<section id="projekt2">
-		<div class="container">
-			<div class="jumbotron">
-				<h1>Projekt 2</h1>
-				<h3>Opcje --> Lab2</h3>
-			</div>
-		</div>
-	</section>
-
-
 	<section id="projekt3">
 		<div class="container">
-			<div class="jumbotron">
+			<div style="min-height: 1250px;" class="jumbotron">
 				<h1>Projekt 3</h1>
-				<h3>Opcje --> Lab3</h3>
+
+				<h1 style="font-size: 32px;">Zad 1</h1>
+
+				<p>
+					<span>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus ligula eu lorem
+						pellentesque feugiat. Donec vitae augue lacus. Morbi felis ex, dictum quis semper sit amet,
+						auctor sodales nunc. Sed ullamcorper posuere turpis, vel efficitur metus ultrices sit amet. In
+						nec efficitur erat. Quisque accumsan, velit id molestie scelerisque, lorem nibh convallis metus,
+						eget tincidunt dui massa sit amet sapien. Donec suscipit congue lacus non consequat. Class
+						aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec
+						vitae orci et arcu pharetra rhoncus.
+					</span>
+				</p>
+				<p>
+					<span class="pq">
+						Aenean at hendrerit odio. Praesent accumsan purus nec est sollicitudin aliquet. Phasellus
+						viverra interdum arcu a pharetra. Donec ac tincidunt turpis, a vestibulum orci. Phasellus nec
+						neque turpis. Donec sed vulputate leo. Nam eu euismod quam, ac suscipit tellus. Etiam sed ex
+						vitae neque pretium feugiat. </span>
+				</p>
+
+				<script>
+					$(document).ready(function () {
+						$('span.pq').each(function () {
+							let quote = $(this).clone();
+							quote.removeClass('pq');
+							quote.addClass('pullquote');
+							$(this).before(quote);
+						}); // koniec funkcji each
+					}); // koniec funkcji ready
+					$("#target").dblclick(function () {
+						alert("double click");
+					});
+
+				</script>
+
+				<script>
+					//Double click detection
+					$("body").dblclick(function () {
+						alert("Double click detected :)");
+					});
+				</script>
+
+				<div id="outer">
+					<p style='font-weight: bold;'>---> Najedz na mnie! </p>
+				</div>
+
+				<div id="log"></div>
+
+				<script>
+					let message = "<p style='color:blue;'>Wskazałeś odnośnik myszą!</p>";
+					//Hover over element detection
+					$("#outer").mouseover(function () {
+						$("#log").append(message);
+					});
+				</script>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="projekt4">
+		<div class="container">
+			<div id="jump" class="jumbotron">
+				<h1 id="prj4">Projekt 4</h1>
+				<h1 style="font-size: 32px;">Zad 2</h1>
+				<form>
+					<br>
+					<div style="margin: auto;">
+						<button style="font-size: 32px;" type="button" class="btn btn-info show-page modal-btn"
+							data-page="one" data-dismiss="modal" aria-hidden="true" id="firstBtn">Kliknij mnie!</button>
+
+						<br><br><br>
+						<button style="font-size: 32px; display: inline-block; margin-left: 8px;" type="button"
+							class="btn btn-primary show-page modal-btn" data-page="one" data-dismiss="modal"
+							aria-hidden="true" id="btn1">Przycisk 1</button>
+
+						<button style="font-size: 32px; display: inline-block; margin-left: 8px;" type="button"
+							class="btn btn-success show-page modal-btn" data-page="one" data-dismiss="modal"
+							aria-hidden="true" id="btn2">Przycisk 2</button>
+
+						<button style="font-size: 32px; display: inline-block; margin-left: 8px;" type="button"
+							class="btn btn-primary show-page modal-btn" data-page="one" data-dismiss="modal"
+							aria-hidden="true" id="btn3">Przycisk 3</button>
+
+						<button style="font-size: 32px; display: inline-block; margin-left: 8px;" type="button"
+							class="btn btn-success show-page modal-btn" data-page="one" data-dismiss="modal"
+							aria-hidden="true" id="btn4">Przycisk 4</button>
+
+						<button style="font-size: 32px; display: inline-block; margin-left: 8px;" type="button"
+							class="btn btn-primary show-page modal-btn" data-page="one" data-dismiss="modal"
+							aria-hidden="true" id="btn5">Przycisk 5</button>
+
+						<button style="font-size: 32px; display: inline-block; margin-left: 8px;  margin-top: 12px;"
+							type="button" class="btn btn-success show-page modal-btn" data-page="one"
+							data-dismiss="modal" aria-hidden="true" id="btn6">Przycisk 6</button>
+
+						<button style="font-size: 32px; display: inline-block; margin-left: 8px; margin-top: 12px;"
+							type="button" class="btn btn-primary show-page modal-btn" data-page="one"
+							data-dismiss="modal" aria-hidden="true" id="btn7">Przycisk 7</button>
+
+						<button style="font-size: 32px; display: inline-block; margin-left: 8px; margin-top: 12px;"
+							type="button" class="btn btn-success show-page modal-btn" data-page="one"
+							data-dismiss="modal" aria-hidden="true" id="btn8">Przycisk 8</button>
+
+						<button style="font-size: 32px; display: inline-block; margin-left: 8px; margin-top: 12px;"
+							type="button" class="btn btn-primary show-page modal-btn" data-page="one"
+							data-dismiss="modal" aria-hidden="true" id="btn9">Przycisk 9</button>
+
+						<button style="font-size: 32px; display: inline-block; margin-left: 8px; margin-top: 12px;"
+							type="button" class="btn btn-success show-page modal-btn" data-page="one"
+							data-dismiss="modal" aria-hidden="true" id="btn0">Przycisk 0</button>
+					</div>
+				</form>
+				<br><br>
+				<div id="journal">
+					<h2><b>Dziennik akcji:</b></h2>
+				</div>
+
+				<script>
+					let i = 1;
+					$("#firstBtn").click(function () {
+						$(this).text("Zostałem kliknięty po raz " + i + "!");
+						i++;
+					});
+
+					$("#btn0").click(function () {
+						$(this).text("0. kliknięty");
+						$("#prj4").addClass("blue");
+						let message = "<p>ID: " + "#prj4 - kolor tła i pobrubienie czcionki!</p>"
+						$("#journal").append(message);
+					});
+
+					$("#btn1").click(function () {
+						$(this).text("1. kliknięty");
+						$("#btn0").addClass("newColor");
+						let message = "<p>ID: " + "#btn0 - kolor tła!</p>"
+						$("#journal").append(message);
+					});
+
+					$("#btn2").click(function () {
+						$(this).text("2. kliknięty");
+
+						$("#firstBtn").css("display", "none");
+						let message = "<p>ID: " + "#firstBtn- ukrycie!</p>"
+						$("#journal").append(message);
+
+					});
+
+					$("#btn3").click(function () {
+						$(this).text("3. kliknięty");
+						$("#firstBtn").css("display", "inline");
+						$("#firstBtn").addClass("newColorBtn");
+						let message = "<p>ID: " + "#firstBtn- odkrycie i zmiana koloru!</p>"
+						$("#journal").append(message);
+					});
+
+					$("#btn4").click(function () {
+						$(this).text("4. kliknięty");
+						$("body").addClass("newBGColor");
+						let message = "<p>ID: " + "body - zmiana koloru!</p>"
+						$("#journal").append(message);
+					});
+
+					$("#btn5").click(function () {
+						$(this).text("5. kliknięty");
+						$("#btn1").css("display", "none");
+						$("#btn2").css("display", "none");
+						$("#btn3").css("display", "none");
+						$("#btn4").css("display", "none");
+						$("#btn5").css("display", "none");
+						$("#btn7").css("display", "none");
+						$("#btn8").css("display", "none");
+						$("#btn9").css("display", "none");
+						$("#btn0").css("display", "none");
+
+						let message = "<p>ID: " + "#btn0,#btn1,#btn2,#btn3,#btn4,#btn5,#btn6,#btn7,#btn8,#btn9- ukrycie!</p>"
+						$("#journal").append(message);
+					});
+
+					$("#btn6").click(function () {
+						$(this).text("6. kliknięty");;
+						$("#btn1").css("display", "inline-block");
+						$("#btn2").css("display", "inline-block");
+						$("#btn3").css("display", "inline-block");
+						$("#btn4").css("display", "inline-block");
+						$("#btn5").css("display", "inline-block");
+						$("#btn7").css("display", "inline-block");
+						$("#btn8").css("display", "inline-block");
+						$("#btn9").css("display", "inline-block");
+						$("#btn0").css("display", "inline-block");
+
+						let message = "<p>ID: " + "#btn0,#btn1,#btn2,#btn3,#btn4,#btn5,#btn6,#btn7,#btn8,#btn9- odkrycie!</p>"
+						$("#journal").append(message);
+					});
+
+					$("#btn7").click(function () {
+						$(this).text("7. kliknięty");
+						$("#projekt3").css("display", "none");
+						let message = "<p>ID: " + "#projekt3 - ukrycie!</p>"
+						$("#journal").append(message);
+					});
+					$("#btn8").click(function () {
+						$(this).text("8. kliknięty");
+						$("#projekt3").css("display", "block");
+						$("#projekt3").css("background-color", "red");
+						let message = "<p>ID: " + "#projekt3 - odkrycie i kolor!</p>"
+						$("#journal").append(message);
+					});
+
+					$("#btn9").click(function () {
+						$(this).text("9. kliknięty");
+						$("#jump").css("background-color", "purple");
+						let message = "<p>ID: " + "#jump - odkrycie i kolor!</p>"
+						$("#journal").append(message);
+					});
+
+				</script>
 			</div>
 		</div>
 	</section>
