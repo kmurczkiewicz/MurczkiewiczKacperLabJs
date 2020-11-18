@@ -49,7 +49,9 @@
 					<li class="active"><a href="#main-page" class="btn btn-primary" title="Strona główna"> <span
 								class="glyphicon glyphicon-home"></span>
 						</a></li>
+					<li><a href="#projekt1">Projekt 1</a></li>
 					<li><a href="#projekt2">Projekt 2</a></li>
+					<li><a href="#projekt3">Projekt 3</a></li>
 					<li><a href="#form" data-toggle="modal" data-target="#ModalForm">Kontakt</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
 							aria-haspopup="true" aria-expanded="false">Opcje <span class="caret"></span>
@@ -126,115 +128,268 @@
 	</section>
 	<!-- /container -->
 
+	<section id="projekt1">
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Projekt 1</h1>
+
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Liczba</th>
+							<th>Input</th>
+							<th>Button</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>John Lennon</td>
+							<td>523</td>
+							<td><input></th>
+							<td>Jeden</th>
+						</tr>
+						<tr>
+							<td>Paul McCartney</td>
+							<td>623</td>
+							<td><input></th>
+							<td>Dwa</th>
+						</tr>
+						<tr>
+							<td>George Harrison</td>
+							<td>123</td>
+							<td><input target="test"></th>
+							<td>Trzy</th>
+						</tr>
+						<tr>
+							<td class="test">Ringo Starr</td>
+							<td>093</td>
+							<td><input></th>
+							<td>Cztery</th>
+						</tr>
+					</tbody>
+				</table>
+
+
+			</div>
+		</div>
+	</section>
+
 	<section id="projekt2">
 		<div class="container">
 			<div class="jumbotron">
 				<h1>Projekt 2</h1>
-
-				<p>Miejsce na projekt laboratoryjny</p>
+				<button style="font-size: 20px" id="btn1">1. Kolor pierwszej komórki</button>
 				<script>
-					//Zadanie 5
-					let questionNumber = 0;
-					let score = 0;
-					document.write('<h2 style="text-align:center"><b>ZADANIE 5 - QUIZ</h2></b><br>');
+					$(document).ready(function () {
+						let clicked1 = 0;
 
-					//Pytania
-					const questions = [
-						['Ile księżyców ma Ziemia?', 1],
-						['Ile księżyców ma Saturn?', 62],
-						['Ile księżyców ma Wenus?', 0],
-						['Jak nazywa się proces niszczenia skały w wyniku działalności wody lub wiatru?', "erozja"],
-						['Który z popularnych tańców towarzyskich nieodłącznie kojarzy się z Brazylią?', "samba"],
-						['Jak nazywa się zaopatrywanie w żywność pasażerów samolotów czy pracowników firm?', "catering"]
-					];
+						$('#btn1').click(function () {
 
-					//Pokaz pytanie
-					//for (let i = 0; i < questions.length; i++) {
-					document.write("<p id='question' style='font-size: 24px;'><b> Pytanie nr." + (questionNumber + 1) + " : </b>" + questions[questionNumber][0] + "</p>");
-					document.write("<label for='odp' style='font-size: 24px; '>Odpowiedź : </label> <input onfocus=\"this.value=''\" type='text' id='odp'><br><br><br>");
+							if (clicked1 == 0) {
+								clicked1 = 1;
 
-					//}
-
-					//Funkcje quizu
-					function checkAnswers() {
-
-						let score = 0;
-						for (let i = 0; i < questions.length; i++) {
-							let userAnswer = document.querySelectorAll('[id=odp' + i + ']')[0];
-							let correctAnswer = questions[i][1];
-
-							if (userAnswer.value.toString() == correctAnswer.toString()) {
-								score++;
-								userAnswer.style.backgroundColor = "#90ee90";
-							} else {
-								userAnswer.style.backgroundColor = "#ff4c4c";
-							}
-
-						}
-					}
-
-					function nextQuestion() {
-
-						if ((document.querySelectorAll('[id=zatw]')[0].innerHTML === "Reset?") && (questionNumber === -1)) {
-							//Reset quiz
-							score = 0;
-							questionNumber = 0;
-
-							document.querySelectorAll('[id=question]')[0].innerHTML = "<b> Pytanie nr." + (questionNumber + 1) + " : </b>" + questions[questionNumber][0];
-							document.querySelectorAll('[id=zatw]')[0].style.backgroundColor = "grey";
-							document.querySelectorAll('[id=zatw]')[0].innerHTML = "Next"
-							document.getElementById("wynik").innerHTML = "";
-
-						}
-						else {
-							if (questionNumber === 5) {
-								document.querySelectorAll('[id=zatw]')[0].innerHTML = "Pokaz wynik"
-								document.querySelectorAll('[id=zatw]')[0].style.backgroundColor = "#90ee90";
-							}
-
-							if (questionNumber < 6) {
-								let userAns = document.querySelectorAll('[id=odp]')[0];
-								let correctAnswer = questions[questionNumber][1];
-
-								if (userAns.value.toString() == correctAnswer.toString()) {
-									score++;
-								}
-								questionNumber++;
-
-								document.querySelectorAll('[id=odp]')[0].innerHTML = "";
-								document.querySelectorAll('[id=question]')[0].innerHTML = "<b> Pytanie nr." + (questionNumber + 1) + " : </b>" + questions[questionNumber][0];
-
+								$("th:first-of-type").css("background-color", "limegreen");
+								$("#btn1").css("background-color", "limegreen");
+								$("th:first-of-type").fadeOut(5000);
 							}
 							else {
-								document.getElementById("wynik").innerHTML = "Wynik quizu : " + score + "/" + questions.length + " pkt";
-								document.querySelectorAll('[id=zatw]')[0].innerHTML = "Reset?"
-								document.querySelectorAll('[id=zatw]')[0].style.backgroundColor = "#FFD300";
-								questionNumber = -1;
+								clicked1 = 0;
+								$("th:first-of-type").fadeIn(300);
+								$("th:first-of-type").css("background-color", "transparent");
+								$("#btn1").css("background-color", "transparent");
 							}
 
-						}
+						});
 
-
-					}
-
-					function resetQuiz() {
-						document.getElementById("wynik").innerHTML = "";
-						for (let i = 0; i < questions.length; i++) {
-							document.querySelectorAll('[id=zatw]')[0].innerHTML = "Next"
-							document.querySelectorAll('[id=zatw]')[0].style.backgroundColor = "gray";
-						}
-					}
-
-					//Przyciski zatwierdz/reset
-					document.write("<button id='zatw' onclick='nextQuestion()' style = 'width:256px; font-size: 32px; background:lightslategray; float: right;'>Next</button>")
-					//document.write("<button onclick='checkAnswers()' style = 'width:256px; font-size: 32px; background:#50C878;'>Zatwierdź</button>");
-					//ocument.write("<button onclick='resetQuiz()' style = 'width: 256px; font-size: 32px; background:#FFD300; float: left;'>Reset Quiz</button>");
-
-
-
+					});
 				</script>
-				<br><br><br>
-				<p id="wynik" style='font-size: 24px; font-weight: bold;'></p>
+				<br><br>
+
+				<button style="font-size: 20px" id="btn2">2. Kolor pierwszej kolumny bez pierwszej komórki</button>
+				<script>
+					$(document).ready(function () {
+						let clicked1 = 0;
+
+						$('#btn2').click(function () {
+
+							if (clicked1 == 0) {
+								clicked1 = 1;
+
+								$("td:first-of-type").css("background-color", "#5bc0de;");
+								$("#btn2").css("background-color", "#5bc0de;");
+								$("td:first-of-type").fadeOut(5000);
+							}
+							else {
+								clicked1 = 0;
+								$("td:first-of-type").fadeIn(300);
+								$("td:first-of-type").css("background-color", "transparent");
+								$("#btn2").css("background-color", "transparent");
+							}
+
+						});
+
+					});
+				</script>
+				<br><br>
+
+				<button style="font-size: 20px" id="btn3">3. Czcionka komórek 623 i 093</button>
+				<script>
+					$(document).ready(function () {
+						let clicked1 = 0;
+
+						$('#btn3').click(function () {
+
+							if (clicked1 == 0) {
+								clicked1 = 1;
+
+								$("td:contains(623)").css("font-weight", "bold");
+								$("td:contains(093)").css("font-weight", "bold");
+								$("td:contains(623)").css("font-family", "Impact, Charcoal, sans-serif");
+								$("td:contains(093)").css("font-family", "Impact, Charcoal, sans-serif");
+								$("#btn3").css("background-color", "yellow");
+								$("td:contains(093)").fadeOut(5000);
+								$("td:contains(623)").fadeOut(5000);
+							}
+							else {
+								clicked1 = 0;
+								$("td:contains(093)").fadeIn(300);
+								$("td:contains(623)").fadeIn(300);
+								$("#btn3").css("background-color", "transparent");
+								$("td:contains(623)").css("font-weight", "normal");
+								$("td:contains(093)").css("font-weight", "normal");
+								$("td:contains(623)").css("font-family", "Times New Roman, Times, serif");
+								$("td:contains(093)").css("font-family", "Times New Roman, Times, serif");
+							}
+
+						});
+
+					});
+				</script>
+				<br><br>
+
+				<button style="font-size: 20px" id="btn4">4. Sąsiedzi komórki o wartości "Ringo Star - kolor"</button>
+				<script>
+					$(document).ready(function () {
+						let clicked1 = 0;
+
+						$('#btn4').click(function () {
+
+							if (clicked1 == 0) {
+								clicked1 = 1;
+
+								$("td.test").siblings().css("background-color", "#ff6b85");
+								$("#btn4").css("background-color", "#ff6b85");
+								$("td.test").fadeOut(5000)
+							}
+							else {
+								clicked1 = 0;
+								$("td.test").fadeIn(300);
+								$("td.test").siblings().css("background-color", "transparent");
+								$("#btn4").css("background-color", "transparent");
+							}
+
+						});
+
+					});
+				</script>
+				<br><br>
+
+				<button style="font-size: 20px" id="btn5">5. Dzieci - dodanie tekstu i zmiana koloru czcionki
+					input</button>
+				<script>
+					$(document).ready(function () {
+						let clicked1 = 0;
+
+						$('#btn5').click(function () {
+
+							if (clicked1 == 0) {
+								clicked1 = 1;
+
+								$('table > tbody > tr > td > input').css("color", "#f7347a");
+								$('table > tbody > tr > td > input').val("HI I'M CHILD");
+								$("#btn5").css("background-color", "#66cdaa");
+								$("table > tbody > tr > td > input").fadeOut(5000);
+							}
+							else {
+								clicked1 = 0;
+								$("table > tbody > tr > td > input").fadeIn(300);
+								$('table > tbody > tr > td > input').css("color", "black");
+								$('table > tbody > tr > td > input').val("");
+								$("#btn5").css("background-color", "transparent");
+							}
+
+						});
+
+					});
+				</script>
+				<br><br>
+
+				<button style="font-size: 20px" id="btn6">6. Elementy sąsiadujące - kolor czcionki i styl</button>
+				<script>
+					$(document).ready(function () {
+						let clicked1 = 0;
+
+						$('#btn6').click(function () {
+
+							if (clicked1 == 0) {
+								clicked1 = 1;
+								$('thead + tbody').css("color", "#981220");
+								$('thead + tbody').css("font-weight", "bold");
+								$("#btn6").css("background-color", "#7fccf3");
+								$("thead + tbody").fadeOut(5000);
+							}
+							else {
+								clicked1 = 0;
+								$("thead + tbody").fadeIn(300);
+								$('thead + tbody').css("color", "black");
+								$('thead + tbody').css("font-weight", "normal");
+								$("#btn6").css("background-color", "transparent");
+							}
+
+						});
+
+					});
+				</script>
+				<br><br>
+
+				<button style="font-size: 20px" id="btn7">7. Selektor przez atrybut - input text </button>
+				<script>
+					$(document).ready(function () {
+						let clicked1 = 0;
+
+						$('#btn7').click(function () {
+
+							if (clicked1 == 0) {
+								clicked1 = 1;
+								$("input[target='test']").val("HELLO WORLD!!!");
+								$("input[target='test']").css("background-color", "yellow");
+								$("input[target='test']").fadeOut(5000);
+								$("#btn7").css("background-color", "#cebcb4");
+							}
+							else {
+								clicked1 = 0;
+								$("input[target='test']").fadeIn(300);
+								$("input[target='test']").val("");
+								$("input[target='test']").css("background-color", "white");
+								$("#btn7").css("background-color", "transparent");
+							}
+
+						});
+
+					});
+				</script>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="projekt3">
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Projekt 3</h1>
+
+
 			</div>
 		</div>
 	</section>
