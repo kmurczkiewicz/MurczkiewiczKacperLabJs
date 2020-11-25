@@ -187,27 +187,24 @@
 								);
 							}
 						);
+						//Zad.2 - Animacja paska
+						$('#dashboard img').each(function () {
+							let imgFile = $(this).attr('src');
+							let preloadImage = new Image();
+							let imgExt = /(\.\w{3,4}$)/;
+							preloadImage.src = imgFile.replace(imgExt, '_h$1');
+							$(this).hover(
+								function () {
+									$(this).attr('src', preloadImage.src);
+								},
+								function () {
+									$(this).attr('src', imgFile);
+								}
+							); // Koniec funkcji hover.
+						}); // Koniec funkcji each.
 					});
 				</script>
 
-				<!-- /Zad.2 - Animacja paska -->
-
-				<script>
-					$('#dashboard img').each(function () {
-						let imgFile = $(this).attr('src');
-						let preloadImage = new Image();
-						let imgExt = /(\.\w{3,4}$)/;
-						preloadImage.src = imgFile.replace(imgExt, '_h$1');
-						$(this).hover(
-							function () {
-								$(this).attr('src', preloadImage.src);
-							},
-							function () {
-								$(this).attr('src', imgFile);
-							}
-						); // Koniec funkcji hover.
-					}); // Koniec funkcji each.
-				</script>
 
 			</div>
 		</div>
