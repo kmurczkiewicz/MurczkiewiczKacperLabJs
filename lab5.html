@@ -25,6 +25,11 @@
 	<script src="js/jquery.easing.compatibility.js"></script>
 
 
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jque
+	ry.fancybox.min.css" />
+	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquer
+	y.fancybox.min.js"></script>
+
 </head>
 
 <body>
@@ -50,9 +55,6 @@
 								class="glyphicon glyphicon-home"></span>
 						</a></li>
 					<li><a href="#projekt1">Projekt 1</a></li>
-					<li><a href="#projekt2">Projekt 2</a></li>
-					<li><a href="#projekt3">Projekt 3</a></li>
-					<li><a href="#projekt4">Projekt 4</a></li>
 					<li><a href="#form" data-toggle="modal" data-target="#ModalForm">Kontakt</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
 							aria-haspopup="true" aria-expanded="false">Opcje <span class="caret"></span>
@@ -134,38 +136,83 @@
 		<div class="container">
 			<div class="jumbotron">
 				<h1>Projekt 1</h1>
-				<h3>Opcje --> Lab1</h3>
+				<h3>Wysuwany pasek po lewej :)</h3>
+				<!-- /Zad.1 - Animacja paska -->
+
+				<div id="dashboard">
+					<a data-fancybox="gallery" href="img/large/blue.jpg" rel="gallery" title="BLUE">
+						<img src="img/small/blue.jpg" width="70" height="70" alt="blue">
+					</a>
+
+					<a data-fancybox="gallery" href="img/large/green.jpg" rel="gallery" title="GREEN">
+						<img src="img/small/green.jpg" width="70" height="70" alt="green">
+					</a>
+
+					<a data-fancybox="gallery" href="img/large/orange.jpg" rel="gallery" title="ORAGNE">
+						<img src="img/small/orange.jpg" width="70" height="70" alt="orange">
+					</a>
+
+					<a data-fancybox="gallery" href="img/large/purple.jpg" rel="gallery" title="PURPLE">
+						<img src="img/small/purple.jpg" width="70" height="70" alt="purple">
+					</a>
+
+					<a data-fancybox="gallery" href="img/large/red.jpg" rel="gallery" title="RED">
+						<img src="img/small/red.jpg" width="70" height="70" alt="red">
+					</a>
+
+					<a data-fancybox="gallery" href="img/large/yellow.jpg" rel="gallery" title="YELLOW">
+						<img src="img/small/yellow.jpg" width="70" height="70" alt="yellow">
+					</a>
+				</div>
+				<script>
+					$(document).ready(function () {
+						$('#dashboard').hover(
+							function () {
+								$(this).stop().animate({
+									left: '0',
+									backgroundColor: 'rgb(255,255,255)'
+								},
+									500,
+									'easeInSine'
+								);
+							},
+							function () {
+								$(this).stop().animate(
+									{
+										left: '-92px',
+										backgroundColor: 'rgb(110,138,195)'
+									},
+									1500,
+									'easeOutBounce'
+								);
+							}
+						);
+					});
+				</script>
+
+				<!-- /Zad.2 - Animacja paska -->
+
+				<script>
+					$('#dashboard img').each(function () {
+						let imgFile = $(this).attr('src');
+						let preloadImage = new Image();
+						let imgExt = /(\.\w{3,4}$)/;
+						preloadImage.src = imgFile.replace(imgExt, '_h$1');
+						$(this).hover(
+							function () {
+								$(this).attr('src', preloadImage.src);
+							},
+							function () {
+								$(this).attr('src', imgFile);
+							}
+						); // Koniec funkcji hover.
+					}); // Koniec funkcji each.
+				</script>
+
 			</div>
 		</div>
 	</section>
 
-	<section id="projekt2">
-		<div class="container">
-			<div class="jumbotron">
-				<h1>Projekt 2</h1>
-				<h3>Opcje --> Lab2</h3>
-			</div>
-		</div>
-	</section>
-
-
-	<section id="projekt3">
-		<div class="container">
-			<div class="jumbotron">
-				<h1>Projekt 3</h1>
-				<h3>Opcje --> Lab3</h3>
-			</div>
-		</div>
-	</section>
-
-	<section id="projekt4">
-		<div class="container">
-			<div class="jumbotron">
-				<h1>Projekt 4</h1>
-				<h3>Opcje --> Lab4</h3>
-			</div>
-		</div>
-	</section>
 
 	<footer>
 		<div class="container" style="margin-top: 5%">
